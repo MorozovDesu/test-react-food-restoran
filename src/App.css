@@ -3,3 +3,24 @@
     padding-left: 70%;
     padding-top: 5rem;
 }
+
+.delivery-input{
+    margin-right: 1rem;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.delivery-input input {
+    margin-left: 12px;
+    padding: 5px 12px;
+    font-size: 16px;
+    font-family: inherit;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.label-house {
+    padding-left: 5%
+}

@@ -3,11 +3,11 @@ import './Button.css'
 
 
 
-export default function Button({ children, onClick }) {
+export default function Button({ children, onClick, active }) {
    
 
   return (
-    <button className="button" onClick={onClick}>
+    <button className={`button ${active ? 'active' : ''}`} onClick={onClick}>
         {children}
     </button>
 
