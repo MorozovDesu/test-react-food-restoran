@@ -1,0 +1,10 @@
+
+.menuButton{
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ff0000;
+    padding: 10px;
+    border-radius: 5em;
+}

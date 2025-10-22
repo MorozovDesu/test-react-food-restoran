@@ -1,0 +1,16 @@
+
+
+.basket {
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ff0000;
+    padding: 10px;
+    border-radius: 5em;
+
+}
+
+.basket-icon {
+    margin-left: 6px;
+}
