@@ -1,0 +1,74 @@
+.category-menu-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #f11e1e;
+  border: none;
+  color: white;
+  padding: 6px 7px;
+  cursor: pointer;
+  border-radius: 3px;
+  z-index: 2;
+}
+
+.scroll-btn.left {
+  left: 0;
+}
+
+.scroll-btn.right {
+  right: 0;
+}
+
+.category-menu {
+  display: flex;
+  flex-wrap: wrap; /* чтобы кнопки переносились на новую строку, если не помещаются */
+  gap: 15px;
+  padding: 10px 20px;
+  background: #fff; /* фон обязательно, чтобы перекрывать контент */
+  border-bottom: 1px solid #eee;
+  position: sticky; /* ключевое свойство */
+  top: 0;           /* отступ от верхнего края */
+  z-index: 1000;    /* чтобы меню было поверх других элементов */
+}
+
+
+.category-menu::-webkit-scrollbar {
+  display: none;
+}
+
+.category-item {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #999;
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 6px;
+  transition: color 0.3s;
+}
+
+.category-item:hover {
+  color: #000;
+}
+
+.category-item.active {
+  color: #f11e1e;
+  font-weight: 600;
+}
+
+.category-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #f11e1e;
+  border-radius: 2px;
+}
