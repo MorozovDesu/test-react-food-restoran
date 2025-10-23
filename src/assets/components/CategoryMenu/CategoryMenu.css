@@ -2,6 +2,8 @@
   display: flex;
   align-items: center;
   position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .scroll-btn {
@@ -11,32 +13,40 @@
   background: #f11e1e;
   border: none;
   color: white;
-  padding: 6px 7px;
+  padding: 8px 10px;
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: 6px;
   z-index: 2;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.scroll-btn:hover {
+  background: #d00e0e;
+  transform: translateY(-50%) scale(1.1);
 }
 
 .scroll-btn.left {
-  left: 0;
+  left: 10px;
 }
 
 .scroll-btn.right {
-  right: 0;
+  right: 10px;
 }
 
 .category-menu {
   display: flex;
-  flex-wrap: wrap; /* чтобы кнопки переносились на новую строку, если не помещаются */
-  gap: 15px;
-  padding: 10px 20px;
-  background: #fff; /* фон обязательно, чтобы перекрывать контент */
+  flex-wrap: nowrap;
+  gap: 20px;
+  padding: 15px 40px;
+  background: #fff;
   border-bottom: 1px solid #eee;
-  position: sticky; /* ключевое свойство */
-  top: 0;           /* отступ от верхнего края */
-  z-index: 1000;    /* чтобы меню было поверх других элементов */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  overflow-x: auto;
+  scroll-behavior: smooth;
 }
-
 
 .category-menu::-webkit-scrollbar {
   display: none;
@@ -49,26 +59,90 @@
   color: #999;
   cursor: pointer;
   position: relative;
-  padding-bottom: 6px;
-  transition: color 0.3s;
+  padding: 8px 12px;
+  transition: all 0.3s;
+  white-space: nowrap;
+  border-radius: 6px;
 }
 
 .category-item:hover {
   color: #000;
+  background: #f5f5f5;
 }
 
 .category-item.active {
   color: #f11e1e;
   font-weight: 600;
+  background: #fff5f5;
 }
 
 .category-item.active::after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
   height: 2px;
   background: #f11e1e;
   border-radius: 2px;
+}
+
+/* Адаптивные стили для CategoryMenu */
+@media (max-width: 768px) {
+  .category-menu-wrapper {
+    padding: 0 15px;
+  }
+  
+  .scroll-btn {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+  
+  .scroll-btn.left {
+    left: 5px;
+  }
+  
+  .scroll-btn.right {
+    right: 5px;
+  }
+  
+  .category-menu {
+    padding: 12px 30px;
+    gap: 15px;
+  }
+  
+  .category-item {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-menu-wrapper {
+    padding: 0 10px;
+  }
+  
+  .scroll-btn {
+    padding: 4px 6px;
+    font-size: 10px;
+  }
+  
+  .scroll-btn.left {
+    left: 2px;
+  }
+  
+  .scroll-btn.right {
+    right: 2px;
+  }
+  
+  .category-menu {
+    padding: 10px 25px;
+    gap: 12px;
+  }
+  
+  .category-item {
+    font-size: 13px;
+    padding: 5px 8px;
+  }
 }

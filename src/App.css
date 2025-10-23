@@ -1,26 +1,144 @@
-.delivery{
-    display: flex;
-    padding-left: 70%;
-    padding-top: 5rem;
+/* Основные стили для App */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.delivery-input{
-    margin-right: 1rem;
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 10px;
+.delivery {
+  display: flex;
+  justify-content: flex-end;
+  padding: 2rem 0;
+  gap: 1rem;
 }
+
+.delivery-input {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.delivery-input h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.delivery-input label {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #555;
+}
+
 .delivery-input input {
-    margin-left: 12px;
-    padding: 5px 12px;
-    font-size: 16px;
-    font-family: inherit;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    outline: none;
-    transition: border-color 0.3s, box-shadow 0.3s;
+  margin-left: 12px;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-family: inherit;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  width: 200px;
+}
+
+.delivery-input input:focus {
+  border-color: #ff0000;
+  box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.1);
 }
 
 .label-house {
-    padding-left: 5%
+  margin-top: 1rem;
+}
+
+.pickup-info {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.pickup-info h1 {
+  font-size: 1.5rem;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+  main {
+    padding: 0 15px;
+  }
+  
+  .delivery {
+    justify-content: center;
+    padding: 1.5rem 0;
+    flex-wrap: wrap;
+  }
+  
+  .delivery-input {
+    margin: 1.5rem 0;
+    padding: 1rem;
+  }
+  
+  .delivery-input h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .delivery-input input {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+  
+  .pickup-info {
+    margin: 1.5rem 0;
+    padding: 1rem;
+  }
+  
+  .pickup-info h1 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 0 10px;
+  }
+  
+  .delivery {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+  }
+  
+  .delivery-input {
+    margin: 1rem 0;
+    padding: 0.8rem;
+  }
+  
+  .delivery-input h1 {
+    font-size: 1.3rem;
+  }
+  
+  .delivery-input label {
+    font-size: 1rem;
+  }
+  
+  .delivery-input input {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+  
+  .pickup-info h1 {
+    font-size: 1.1rem;
+  }
 }

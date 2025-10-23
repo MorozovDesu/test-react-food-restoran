@@ -91,13 +91,10 @@ export default function App() {
           </div>
         )}
 
-
         <CategoryMenu
           selected={selectedCategory}
           onSelect={setSelectedCategory}
         />
-
-        {/* <div>{totalPrice}</div> */}
 
         <Categories
           selected={selectedCategory}

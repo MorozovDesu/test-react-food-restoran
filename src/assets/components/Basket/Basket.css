@@ -1,27 +1,74 @@
 
 
 .basket {
-    color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #ff0000;
-    padding: 10px 15px;
-    border-radius: 5em;
-    min-width: 80px;
-    gap: 5px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ff0000;
+  padding: 12px 18px;
+  border-radius: 25px;
+  min-width: 90px;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 2px 8px rgba(255, 0, 0, 0.3);
+}
+
+.basket:hover {
+  background: #e01e1e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.4);
 }
 
 .basket-icon {
-    width: 20px;
-    height: 20px;
+  width: 22px;
+  height: 22px;
 }
 
 .basket-total {
-    font-weight: bold;
-    font-size: 16px;
-    color: #ffffff !important;
-    white-space: nowrap;
+  font-weight: bold;
+  font-size: 16px;
+  color: #ffffff !important;
+  white-space: nowrap;
+  padding: 2px 8px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Адаптивные стили для Basket */
+@media (max-width: 768px) {
+  .basket {
+    padding: 10px 15px;
+    min-width: 80px;
+    gap: 6px;
+  }
+  
+  .basket-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .basket-total {
+    font-size: 14px;
     padding: 2px 6px;
-    border-radius: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .basket {
+    padding: 8px 12px;
+    min-width: 70px;
+    gap: 5px;
+  }
+  
+  .basket-icon {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .basket-total {
+    font-size: 13px;
+    padding: 1px 5px;
+  }
 }

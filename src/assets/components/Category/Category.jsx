@@ -1,6 +1,7 @@
 import { useRef, useEffect } from "react";
 import Cart from "../Cart/Cart.jsx";
 import { products } from "../Cart/Data.js";
+import "./Category.css";
 
 export default function Categories({ selected, onAddToCart, onRemoveFromCart, cartItems }) {
   const categories = [
@@ -41,23 +42,13 @@ export default function Categories({ selected, onAddToCart, onRemoveFromCart, ca
           <div
             key={category}
             ref={(el) => (refs.current[i] = el)}
-            style={{
-              padding: "30px 0",
-              borderBottom: "1px solid #ccc",
-            }}
+            className="category-section"
           >
             <h2>{category}</h2>
             {filteredProducts.length === 0 ? (
-              <p>Нет товаров в этой категории</p>
+              <p className="no-products">Нет товаров в этой категории</p>
             ) : (
-              <div
-                className="category-cards"
-                style={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  gap: "20px",
-                }}
-              >
+              <div className="category-cards">
                 {filteredProducts.map((product) => {
                   const cartItem = cartItems.find(item => item.id === product.id);
                   const count = cartItem ? cartItem.count : 0;

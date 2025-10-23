@@ -1,21 +1,45 @@
 
 .button {
-    padding: 0.8rem 2rem; 
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition:all 0.3s;
-    font-weight: bold;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: bold;
+  font-size: 1rem;
+  min-width: 120px;
+  text-align: center;
 }
+
 .button:hover {
-    opacity: 0.8;
+  opacity: 0.8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
+
 .button.active {
-    background:#ff0000;
-    color: #fff;
+  background: #ff0000;
+  color: #fff;
 }
 
 .button:hover {
   background: #cc0000;
+}
+
+/* Адаптивные стили для Button */
+@media (max-width: 768px) {
+  .button {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+    min-width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.8rem;
+    min-width: 90px;
+  }
 }
 

@@ -1,10 +1,43 @@
 
-.menuButton{
-    color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #ff0000;
+.menuButton {
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ff0000;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 2px 8px rgba(255, 0, 0, 0.3);
+  border: none;
+  min-width: 45px;
+  min-height: 45px;
+}
+
+.menuButton:hover {
+  background: #e01e1e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.4);
+}
+
+.menuButton:active {
+  transform: translateY(0);
+}
+
+/* Адаптивные стили для BurgerMenuButton */
+@media (max-width: 768px) {
+  .menuButton {
     padding: 10px;
-    border-radius: 5em;
+    min-width: 40px;
+    min-height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .menuButton {
+    padding: 8px;
+    min-width: 35px;
+    min-height: 35px;
+  }
 }
