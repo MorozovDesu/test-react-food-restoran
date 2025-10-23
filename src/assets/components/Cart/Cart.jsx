@@ -1,18 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from "../Button/Button";
 import "./Cart.css";
 
-function Cart({ id, name, price, image, tag, onAddToCart }) {
-  const [count, setCount] = useState(0);
-
+function Cart({ id, name, price, image, tag, count = 0, onAddToCart, onRemoveFromCart }) {
   const handleAdd = () => {
-    setCount(count + 1);
     onAddToCart({ id, name, price, image, tag });
   };
 
   const handleRemove = () => {
     if (count > 0) {
-      setCount(count - 1);
       onRemoveFromCart(id);
     }
   };

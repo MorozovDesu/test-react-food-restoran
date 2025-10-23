@@ -2,7 +2,7 @@ import { useRef, useEffect } from "react";
 import Cart from "../Cart/Cart.jsx";
 import { products } from "../Cart/Data.js";
 
-export default function Categories({ selected, onAddToCart }) {
+export default function Categories({ selected, onAddToCart, onRemoveFromCart, cartItems }) {
   const categories = [
     "Бургеры",
     "Твистеры",
@@ -58,17 +58,24 @@ export default function Categories({ selected, onAddToCart }) {
                   gap: "20px",
                 }}
               >
-                {filteredProducts.map((product) => (
-                  <Cart
-                    key={product.id}
-                    id={product.id}
-                    name={product.name}
-                    price={product.price}
-                    image={product.image}
-                    tag={product.tag}
-                    onAddToCart={onAddToCart}
-                  />
-                ))}
+                {filteredProducts.map((product) => {
+                  const cartItem = cartItems.find(item => item.id === product.id);
+                  const count = cartItem ? cartItem.count : 0;
+                  
+                  return (
+                    <Cart
+                      key={product.id}
+                      id={product.id}
+                      name={product.name}
+                      price={product.price}
+                      image={product.image}
+                      tag={product.tag}
+                      count={count}
+                      onAddToCart={onAddToCart}
+                      onRemoveFromCart={onRemoveFromCart}
+                    />
+                  );
+                })}
               </div>
             )}
           </div>

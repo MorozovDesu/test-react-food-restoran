@@ -9,7 +9,7 @@ export default function Header({ totalPrice }) {
         <BurgerMenuButton>Меню</BurgerMenuButton>
       </div>
       <div className="basketButton">
-        <Basket>{totalPrice} ₽</Basket>
+        <Basket>{totalPrice || 0} ₽</Basket>
       </div>
     </header>
   );

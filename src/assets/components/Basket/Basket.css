@@ -6,11 +6,22 @@
     justify-content: center;
     align-items: center;
     background: #ff0000;
-    padding: 10px;
+    padding: 10px 15px;
     border-radius: 5em;
-
+    min-width: 80px;
+    gap: 5px;
 }
 
 .basket-icon {
-    margin-left: 6px;
+    width: 20px;
+    height: 20px;
+}
+
+.basket-total {
+    font-weight: bold;
+    font-size: 16px;
+    color: #ffffff !important;
+    white-space: nowrap;
+    padding: 2px 6px;
+    border-radius: 10px;
 }

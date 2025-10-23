@@ -51,6 +51,7 @@ export default function App() {
 
   return (
     <>
+
       <Header totalPrice={totalPrice} /> 
       <main>
         <div className="delivery">
@@ -89,17 +90,20 @@ export default function App() {
             </h1>
           </div>
         )}
-        <div>{totalPrice}</div>
+
 
         <CategoryMenu
           selected={selectedCategory}
           onSelect={setSelectedCategory}
         />
 
+        {/* <div>{totalPrice}</div> */}
+
         <Categories
           selected={selectedCategory}
           onAddToCart={handleAddToCart}
           onRemoveFromCart={handleRemoveFromCart}
+          cartItems={cartItems}
         />
       </main>
     </>
