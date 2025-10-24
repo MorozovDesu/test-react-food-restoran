@@ -4,6 +4,7 @@ import Header from "./assets/components/Header/Header.jsx";
 import Button from "./assets/components/Button/Button.jsx";
 import CategoryMenu from "./assets/components/CategoryMenu/CategoryMenu.jsx";
 import Categories from "./assets/components/Category/Category.jsx";
+import Footer from "./assets/components/Footer/Footer.jsx";
 
 export default function App() {
   const [mode, setMode] = useState(null);
@@ -51,8 +52,7 @@ export default function App() {
 
   return (
     <>
-
-      <Header totalPrice={totalPrice} /> 
+      <Header totalPrice={totalPrice} />
       <main>
         <div className="delivery">
           <Button
@@ -102,7 +102,10 @@ export default function App() {
           onRemoveFromCart={handleRemoveFromCart}
           cartItems={cartItems}
         />
+
       </main>
+
+      <Footer></Footer>
     </>
   );
 }
