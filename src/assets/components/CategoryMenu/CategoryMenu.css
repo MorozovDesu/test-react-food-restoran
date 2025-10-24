@@ -4,21 +4,7 @@
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
-}
-
-.scroll-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #f11e1e;
-  border: none;
-  color: white;
-  padding: 8px 10px;
-  cursor: pointer;
-  border-radius: 6px;
-  z-index: 2;
-  font-size: 14px;
-  transition: all 0.3s;
+  
 }
 
 .scroll-btn:hover {
@@ -38,14 +24,18 @@
   display: flex;
   flex-wrap: nowrap;
   gap: 20px;
-  padding: 15px 40px;
+  padding: 12px 40px;
   background: #fff;
   border-bottom: 1px solid #eee;
+  border-radius: 15px;
   position: sticky;
-  top: 0;
-  z-index: 1000;
+  /* отступ сверху равен высоте хедера плюс небольшой gap (8px) */
+  top: calc(var(--header-height, 64px) + 8px);
+  /* z-index ниже хедера, чтобы header оставался сверху */
+  z-index: 900;
   overflow-x: auto;
   scroll-behavior: smooth;
+  backdrop-filter: blur(0);
 }
 
 .category-menu::-webkit-scrollbar {

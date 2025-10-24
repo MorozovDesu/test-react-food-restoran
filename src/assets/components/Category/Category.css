@@ -1,4 +1,4 @@
-/* Стили для категорий товаров */
+Стили для категорий товаров
 .category-section {
   padding: 30px 0;
   border-bottom: 1px solid #e0e0e0;
@@ -55,7 +55,6 @@
   .category-section {
     padding: 15px 0;
   }
-  
   .category-section h2 {
     font-size: 1.3rem;
     margin-bottom: 12px;
@@ -72,3 +71,4 @@
     font-size: 0.9rem;
   }
 }
+
