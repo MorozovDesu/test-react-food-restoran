@@ -1,3 +1,4 @@
+
 .footerChapter {
   position: relative;
   width: 100%;
@@ -14,12 +15,13 @@
   flex: 1 1 0;
   min-width: 0;
 }
-.footerChapter .footerChapterText{
-    font-weight: 400;
-    font-size: 20px;
-    color: #555;
-    margin: 10px 0;
-    cursor: pointer;
+
+.footerChapter .footerChapterText {
+  font-weight: 400;
+  font-size: 20px;
+  color: #555;
+  margin: 10px 0;
+  cursor: pointer;
 }
 
 .footerChapter:hover {
@@ -27,18 +29,33 @@
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* Адаптивная высота */
-@media (max-width: 768px) {
-  .footerChapter {
-    height: auto;
-    min-height: 120px;
-    padding: 15px;
-  }
-}
-
 @media (max-width: 480px) {
+  .footer-section {
+    padding: 20px 0;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 0 10px;
+    
+  }
+  
   .footerChapter {
     padding: 12px;
     gap: 8px;
+    height: 300px;
+    
+  }
+  
+  .footerChapter .footerChapterText {
+    font-size: 16px;
+    margin: 8px 0;
+  }
+  
+  .footer-bottom {
+    padding: 12px;
+    margin-top: 15px;
+    font-size: 0.9rem;
   }
 }
