@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import "./App.css";
 import Header from "./assets/components/Header/Header.jsx";
 import Button from "./assets/components/Button/Button.jsx";
@@ -10,6 +10,17 @@ export default function App() {
   const [mode, setMode] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState("");
   const [cartItems, setCartItems] = useState([]);
+
+  const [serverMessage, setServerMessage] = useState("");
+  useEffect(() => {
+    fetch("/api")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("Ответ от сервера:", data);
+        setServerMessage(data.message);
+      })
+      .catch((err) => console.error("Ошибка при обращении к backend:", err));
+  }, []);
 
   // Добавление в корзину
   const handleAddToCart = (product) => {
